@@ -1,6 +1,5 @@
 use clap::{arg, command, Command};
 use rand::Rng;
-use std::env;
 use walkdir::WalkDir;
 
 // code comments are good for documentation so this is a comment uwu
