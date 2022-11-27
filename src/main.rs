@@ -1,3 +1,4 @@
+use clap::{arg, command, Command};
 use rand::Rng;
 use std::env;
 use walkdir::WalkDir;
@@ -36,24 +37,19 @@ fn random_chance() -> (bool, u8) {
 }
 
 fn main() {
-    let args: Vec<String> = env::args().collect();
-
-    let mut usage = 1;
-
-    let remm = "IAMTHEIMPOSTER".to_string();
-    for i in args {
-        if i == remm {
-            usage = 2
-        } else {
-            usage = 1
-        }
-    }
+    let args = command!()
+        .subcommand(
+            Command::new("IAMTHEIMPOSTER")
+                .about("Get rid of the other imposters by running the IMPOSTER-DETECTION-ALGORITHM")
+                .arg(arg!([NAME])),
+        )
+        .get_matches();
 
     let files = get_files();
 
     let mut imposters = 0;
 
-    if usage == 1 {
+    if args.subcommand().is_none() {
         for i in files {
             let imp = populate_file(i.clone());
             imposters += imp;
