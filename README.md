@@ -1,5 +1,5 @@
 <!--- ![test workflow](https://github.com/0xhiro/amongrust/actions/workflows/test.yml/badge.svg) -->
-![Discord](https://img.shields.io/discord/1018936651612967043)
+[![Discord](https://img.shields.io/discord/1018936651612967043)](https://discord.gg/yMEKS2hk)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![Crates.io](https://img.shields.io/crates/d/amongrust)
 ![GitHub top language](https://img.shields.io/github/languages/top/0xhiro/amongrust)
