@@ -62,11 +62,16 @@ fn main() {
         println!("found {imposters} imposters in your code");
     } else {
         for i in files {
-            let imp = remove_imposters(i.clone());
-            imposters += imp;
+            loop {
+                let imp = remove_imposters(i.clone());
+
+                if imp == 0 {
+                    break;
+                }
+            }
         }
 
-        println!("eliminated {imposters} imposters from your code. it was a clean job");
+        println!("eliminated all imposters from your sus code. it was a clean job");
     }
 }
 
@@ -755,9 +760,8 @@ fn add_imposter(new_data: &mut Vec<u8>, id: u8) {
 //⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⡹⣜⢣⠯⣝⢲⣹⣿⣿⣿⠀⠀⢿⣿⣿⣧⣛⣬⡛⣼⣻⣿⣿⣿⠀⠀⠀      
 //?.
 "#
-
         }
-        
+
         23 => {
             r#"
 //.?
