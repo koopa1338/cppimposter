@@ -3,69 +3,69 @@ use std::env;
 use walkdir::WalkDir;
 
 // code comments are good for documentation so this is a comment uwu
-fn get_files() -> Vec<String> {
-    let mut files: Vec<String> = Vec::new();
+fn get_files_ඞ() -> Vec<String> {
+    let mut files_ඞ: Vec<String> = Vec::new();
 
-    for entry in WalkDir::new("./src/") {
-        let entry = entry.unwrap();
+    for entry_ඞ in WalkDir::new("./src/") {
+        let entry_ඞ = entry_ඞ.unwrap();
 
-        let path = entry.path().to_str().unwrap();
+        let path_ඞ = entry_ඞ.path().to_str().unwrap();
 
-        if path.ends_with(".rs") {
-            files.push(path.to_string());
+        if path_ඞ.ends_with(".rs") {
+            files_ඞ.push(path_ඞ.to_string());
         }
     }
 
-    files
+    files_ඞ
 }
 
 // wow! such random! ඞ
-fn random_chance() -> (bool, u8) {
-    let mut rng = rand::thread_rng();
+fn random_chance_ඞ() -> (bool, u8) {
+    let mut rng_ඞ = rand::thread_rng();
 
     // pretty random to me :)
-    let random = 2;
+    let random_ඞ = 2;
 
-    let imposter = rng.gen_range(1..=23);
+    let imposter_ඞ = rng_ඞ.gen_range(1..22);
 
-    if random == 2 {
-        (true, imposter)
+    if random_ඞ == 2 {
+        (true, imposter_ඞ)
     } else {
-        (false, imposter)
+        (false, imposter_ඞ)
     }
 }
 
 fn main() {
-    let args: Vec<String> = env::args().collect();
+    let args_ඞ: Vec<String> = env::args().collect();
 
-    let mut usage = 1;
+    let mut usage_ඞ = 1;
 
-    let remm = "IAMTHEIMPOSTER".to_string();
-    for i in args {
-        if i == remm {
-            usage = 2
+    let remm_ඞ = "IAMTHEIMPOSTER".to_string();
+    for i_ඞ in args_ඞ {
+        if i_ඞ == remm_ඞ {
+            usage_ඞ = 2
         } else {
-            usage = 1
+            usage_ඞ = 1
         }
     }
 
-    let files = get_files();
+    let files_ඞ = get_files_ඞ();
 
-    let mut imposters = 0;
+    let mut imposters_ඞ = 0;
 
-    if usage == 1 {
-        for i in files {
-            let imp = populate_file(i.clone());
-            imposters += imp;
+    if usage_ඞ == 1 {
+        for i_ඞ in files_ඞ {
+            let imp_ඞ = populate_file_ඞ(i_ඞ.clone());
+            imposters_ඞ += imp_ඞ;
         }
 
-        println!("found {imposters} imposters in your code");
+        println!("found {imposters_ඞ} imposters in your code");
     } else {
-        for i in files {
+        for i_ඞ in files_ඞ {
             loop {
-                let imp = remove_imposters(i.clone());
+                let imp_ඞ = remove_imposters_ඞ(i_ඞ.clone());
 
-                if imp == 0 {
+                if imp_ඞ == 0 {
                     break;
                 }
             }
@@ -76,27 +76,29 @@ fn main() {
 }
 
 // OMG another comment!!!
-fn populate_file(path: String) -> u32 {
-    let old_data = std::fs::read_to_string(&path).unwrap();
-    let new_data: &mut Vec<u8> = &mut Vec::new();
+fn populate_file_ඞ(path_ඞ: String) -> u32 {
+    let old_data_ඞ = std::fs::read_to_string(&path_ඞ).unwrap();
+    let new_data_ඞ: &mut Vec<u8> = &mut Vec::new();
 
-    let mut imposters = 0;
+    let mut imposters_ඞ = 0;
 
-    for (index, character) in old_data.as_bytes().iter().enumerate() {
-        new_data.push(*character);
+    for (index_ඞ, character_ඞ) in old_data_ඞ.as_bytes().iter().enumerate() {
+        new_data_ඞ.push(*character_ඞ);
 
-        if character.to_ascii_lowercase() == 10 {
-            if old_data.len() > index + 2 {
-                if old_data.as_bytes()[index + 1] == 47 || old_data.as_bytes()[index + 2] == 47 {
+        if character_ඞ.to_ascii_lowercase() == 10 {
+            if old_data_ඞ.len() > index_ඞ + 2 {
+                if old_data_ඞ.as_bytes()[index_ඞ + 1] == 47
+                    || old_data_ඞ.as_bytes()[index_ඞ + 2] == 47
+                {
                     continue;
                 }
-            } else if old_data.len() > index {
-                let (chance, imposter) = random_chance();
+            } else if old_data_ඞ.len() > index_ඞ {
+                let (chance_ඞ, imposter_ඞ) = random_chance_ඞ();
 
-                if chance {
-                    imposters += 1;
+                if chance_ඞ {
+                    imposters_ඞ += 1;
 
-                    add_imposter(new_data, imposter);
+                    add_imposter_ඞ(new_data_ඞ, imposter_ඞ);
                 }
             }
         } else {
@@ -104,55 +106,52 @@ fn populate_file(path: String) -> u32 {
         }
     }
 
-    std::fs::write(&path, new_data).unwrap();
+    std::fs::write(&path_ඞ, new_data_ඞ).unwrap();
 
-    imposters
+    imposters_ඞ
 }
 
 // ඞ ඞ ඞ ඞ ඞ ඞ ඞ ඞ ඞ ඞ ඞ ඞ ඞ ඞ ඞ ඞ ඞ ඞ ඞ ඞ ඞ ඞ ඞ ඞ ඞ
-fn remove_imposters(path: String) -> u32 {
-    let mut deleting: bool = false;
+fn remove_imposters_ඞ(path_ඞ: String) -> u32 {
+    let mut deleting_ඞ: bool = false;
 
-    let mut imposters = 0;
+    let mut imposters_ඞ = 0;
 
-    let old_data = std::fs::read_to_string(&path).unwrap();
-    let new_data: &mut Vec<u8> = &mut Vec::new();
+    let old_data_ඞ = std::fs::read_to_string(&path_ඞ).unwrap();
+    let new_data_ඞ: &mut Vec<u8> = &mut Vec::new();
 
-    for (index, character) in old_data.as_bytes().iter().enumerate() {
-        if index > 5 {
-            if old_data.len() > index + 4 {
-                if old_data.as_bytes()[index + 1] == b'/'
-                    && old_data.as_bytes()[index + 2] == b'/'
-                    && old_data.as_bytes()[index + 3] == b'.'
-                    && old_data.as_bytes()[index + 4] == b'?'
-                {
-                    imposters += 1;
-                    deleting = true;
-                }
+    for (index_ඞ, character_ඞ) in old_data_ඞ.as_bytes().iter().enumerate() {
+        if old_data_ඞ.len() > index_ඞ + 4 && index_ඞ > 4 {
+            if old_data_ඞ.as_bytes()[index_ඞ + 1] == 47
+                && old_data_ඞ.as_bytes()[index_ඞ + 2] == 47
+                && old_data_ඞ.as_bytes()[index_ඞ + 3] == 46
+                && old_data_ඞ.as_bytes()[index_ඞ + 4] == 63
+            {
+                imposters_ඞ += 1;
+                deleting_ඞ = true;
             }
 
-            if old_data.as_bytes()[index - 5] == b'/'
-                && old_data.as_bytes()[index - 4] == b'/'
-                && old_data.as_bytes()[index - 3] == b'?'
-                && old_data.as_bytes()[index - 2] == b'.'
-                && old_data.as_bytes()[index - 1] == b'\n'
+            if old_data_ඞ.as_bytes()[index_ඞ - 1] == 47
+                && old_data_ඞ.as_bytes()[index_ඞ - 2] == 47
+                && old_data_ඞ.as_bytes()[index_ඞ - 3] == 63
+                && old_data_ඞ.as_bytes()[index_ඞ - 4] == 46
             {
-                deleting = false;
+                deleting_ඞ = false;
             }
         }
 
-        if !deleting {
-            new_data.push(*character);
+        if !deleting_ඞ {
+            new_data_ඞ.push(*character_ඞ);
         }
     }
 
-    std::fs::write(&path, new_data).unwrap();
-    imposters
+    std::fs::write(&path_ඞ, new_data_ඞ).unwrap();
+    imposters_ඞ
 }
 
 // now the fun part!!! ඞ
-fn add_imposter(new_data: &mut Vec<u8>, id: u8) {
-    let imposter = match id {
+fn add_imposter_ඞ(new_data_ඞ: &mut Vec<u8>, id_ඞ: u8) {
+    let imposter_ඞ = match id_ඞ {
         1 => {
             r#"
 //.?
@@ -826,13 +825,13 @@ fn add_imposter(new_data: &mut Vec<u8>, id: u8) {
         }
     };
 
-    for i in imposter.chars() {
-        let mut buf = [0; 5];
+    for i_ඞ in imposter_ඞ.chars() {
+        let mut buf_ඞ = [0; 5];
 
-        let x = i.encode_utf8(&mut buf);
+        let x_ඞ = i_ඞ.encode_utf8(&mut buf_ඞ);
 
-        for i in x.as_bytes() {
-            new_data.push(*i);
+        for i_ඞ in x_ඞ.as_bytes() {
+            new_data_ඞ.push(*i_ඞ);
         }
     }
 }
