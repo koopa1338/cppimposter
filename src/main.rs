@@ -54,19 +54,24 @@ fn main() {
     let mut imposters_ඞ = 0;
 
     if usage_ඞ == 1 {
-        for i in files_ඞ {
-            let imp = populate_file_ඞ(i.clone());
-            imposters_ඞ += imp;
+        for i_ඞ in files_ඞ {
+            let imp_ඞ = populate_file_ඞ(i_ඞ.clone());
+            imposters_ඞ += imp_ඞ;
         }
 
         println!("found {imposters_ඞ} imposters in your code");
     } else {
-        for i in files_ඞ {
-            let imp = remove_imposters_ඞ(i.clone());
-            imposters_ඞ += imp;
+        for i_ඞ in files_ඞ {
+            loop {
+                let imp_ඞ = remove_imposters_ඞ(i_ඞ.clone());
+
+                if imp_ඞ == 0 {
+                    break;
+                }
+            }
         }
 
-        println!("eliminated {imposters_ඞ} imposters from your code. it was a clean job");
+        println!("eliminated all imposters from your sus code. it was a clean job");
     }
 }
 
@@ -82,7 +87,9 @@ fn populate_file_ඞ(path_ඞ: String) -> u32 {
 
         if character_ඞ.to_ascii_lowercase() == 10 {
             if old_data_ඞ.len() > index_ඞ + 2 {
-                if old_data_ඞ.as_bytes()[index_ඞ + 1] == 47 || old_data_ඞ.as_bytes()[index_ඞ + 2] == 47 {
+                if old_data_ඞ.as_bytes()[index_ඞ + 1] == 47
+                    || old_data_ඞ.as_bytes()[index_ඞ + 2] == 47
+                {
                     continue;
                 }
             } else if old_data_ඞ.len() > index_ඞ {
@@ -143,8 +150,8 @@ fn remove_imposters_ඞ(path_ඞ: String) -> u32 {
 }
 
 // now the fun part!!! ඞ
-fn add_imposter_ඞ(new_data_ඞ: &mut Vec<u8>, id: u8) {
-    let imposter_ඞ = match id {
+fn add_imposter_ඞ(new_data_ඞ: &mut Vec<u8>, id_ඞ: u8) {
+    let imposter_ඞ = match id_ඞ {
         1 => {
             r#"
 //.?
@@ -818,25 +825,13 @@ fn add_imposter_ඞ(new_data_ඞ: &mut Vec<u8>, id: u8) {
         }
     };
 
-    for i_ඞ in "\n".chars() {
-        new_data_ඞ.push(i_ඞ as u8);
-    }
-
-    for i_ඞ in "\n".chars() {
-        new_data_ඞ.push(i_ඞ as u8);
-    }
-
     for i_ඞ in imposter_ඞ.chars() {
-        let mut buf = [0; 5];
+        let mut buf_ඞ = [0; 5];
 
-        let x_ඞ = i_ඞ.encode_utf8(&mut buf);
+        let x_ඞ = i_ඞ.encode_utf8(&mut buf_ඞ);
 
         for i_ඞ in x_ඞ.as_bytes() {
             new_data_ඞ.push(*i_ඞ);
         }
-    }
-
-    for i_ඞ in "\n".chars() {
-        new_data_ඞ.push(i_ඞ as u8);
     }
 }
