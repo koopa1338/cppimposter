@@ -49,16 +49,17 @@ fn main() {
     let mut imposters_ඞ = 0;
 
     if args_ඞ.subcommand().is_none() {
-        for i in files_ඞ {
-            let imp = populate_file_ඞ(i.clone());
-            imposters_ඞ += imp;
+        for path_ඞ in files_ඞ {
+            let imp_ඞ = populate_file_ඞ(&path_ඞ);
+            imposters_ඞ += imp_ඞ;
+
         }
 
         println!("found {imposters_ඞ} imposters in your code");
     } else {
-        for i_ඞ in files_ඞ {
+        for path_ඞ in files_ඞ {
             loop {
-                let imp_ඞ = remove_imposters_ඞ(i_ඞ.clone());
+                let imp_ඞ = remove_imposters_ඞ(&path_ඞ);
 
                 if imp_ඞ == 0 {
                     break;
@@ -71,8 +72,8 @@ fn main() {
 }
 
 // OMG another comment!!!
-fn populate_file_ඞ(path_ඞ: String) -> u32 {
-    let old_data_ඞ = std::fs::read_to_string(&path_ඞ).unwrap();
+fn populate_file_ඞ(path_ඞ: &str) -> u32 {
+    let old_data_ඞ = std::fs::read_to_string(path_ඞ).unwrap();
     let new_data_ඞ: &mut Vec<u8> = &mut Vec::new();
 
     let mut imposters_ඞ = 0;
@@ -96,8 +97,6 @@ fn populate_file_ඞ(path_ඞ: String) -> u32 {
                     add_imposter_ඞ(new_data_ඞ, imposter_ඞ);
                 }
             }
-        } else {
-            //
         }
     }
 
@@ -107,12 +106,12 @@ fn populate_file_ඞ(path_ඞ: String) -> u32 {
 }
 
 // ඞ ඞ ඞ ඞ ඞ ඞ ඞ ඞ ඞ ඞ ඞ ඞ ඞ ඞ ඞ ඞ ඞ ඞ ඞ ඞ ඞ ඞ ඞ ඞ ඞ
-fn remove_imposters_ඞ(path_ඞ: String) -> u32 {
+fn remove_imposters_ඞ(path_ඞ: &str) -> u32 {
     let mut deleting_ඞ: bool = false;
 
     let mut imposters_ඞ = 0;
 
-    let old_data_ඞ = std::fs::read_to_string(&path_ඞ).unwrap();
+    let old_data_ඞ = std::fs::read_to_string(path_ඞ).unwrap();
     let new_data_ඞ: &mut Vec<u8> = &mut Vec::new();
 
     for (index_ඞ, character_ඞ) in old_data_ඞ.as_bytes().iter().enumerate() {
