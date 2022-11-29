@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
 
+#### [v0.1.4](https://github.com/0xhiro/amongrust/compare/v0.1.2...v0.1.4)
+
+> 29 November 2022
+
+- ♻️ Avoid string cloning by passing references [`#11`](https://github.com/0xhiro/amongrust/pull/11)
+- Clap args [`#12`](https://github.com/0xhiro/amongrust/pull/12)
+- amogus [`#3`](https://github.com/0xhiro/amongrust/pull/3)
+- ➕ Added Clap for better argument parsing support [`6c0703d`](https://github.com/0xhiro/amongrust/commit/6c0703dd37a0b787c79bc282d44880c79b540104)
+- ♻️ Avoid string cloning [`74b8e57`](https://github.com/0xhiro/amongrust/commit/74b8e570fb29364acf7ca0e8360ee3338e1fd6f2)
+- ➖ Removed the use of std::env [`ff6a3a2`](https://github.com/0xhiro/amongrust/commit/ff6a3a2943d0f758feaab3c3aa5bb81db56cd200)
+
 #### [v0.1.2](https://github.com/0xhiro/amongrust/compare/v0.1.1...v0.1.2)
 
 > 27 November 2022
