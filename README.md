@@ -2,7 +2,7 @@
 [![Discord](https://img.shields.io/discord/1018936651612967043)](https://discord.gg/yMEKS2hk)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Crates.io](https://img.shields.io/crates/d/amongrust)](https://crates.io/crates/amongrust)
-[![Crates.io]](https://img.shields.io/crates/v/amongrust)](https://crates.io/crates/amongrust)
+[![Crates.io](https://img.shields.io/crates/v/amongrust)](https://crates.io/crates/amongrust)
 [![GitHub top language](https://img.shields.io/github/languages/top/0xhiro/amongrust)](https://github.com/0xhiro/amongrust/search?l=rust)
 
 
