@@ -14,7 +14,7 @@ AmongRust is totally non-destructive, and your code should work as normal (maybe
 Be careful, the imposters may be very few, or outrageously many. This is a feature, not a bug, and there is no way to remove the imposters. ඞ ඞ ඞ ඞ ඞ ඞ ඞ 
 
 
-I'm just kidding you can reverse the effect by using the "IAMTHEIMPOSTER" argument like `amongrust -- IAMTHEIMPOSTER`, which is very sus if you ask me.
+I'm just kidding you can reverse the effect by using the "IAMTHEIMPOSTER" argument like `amongrust IAMTHEIMPOSTER`, which is very sus if you ask me.
 It is possible to undo the changes made to your code because of my IMPOSTER-DETECTION-ALGORITHM which took me 9 years to develop.
 
 Of course, you can also manually delete the comments if you want, because they're just comments, but i highly recommend using the "IAMTHEIMPOSTER" argument because that's what it was made for.
@@ -27,7 +27,7 @@ Note: this crate was made by [Hiro](https://twitter.com/0x1hiro) at 2AM in his m
 
 That's it. you're done. Now run `amongrust` in your project directory, then check your sus code.
 
-How to undo: `amongrust -- IAMTHEIMPOSTER`
+How to undo: `amongrust IAMTHEIMPOSTER`
 
 
 DO NOT USE AMONGRUST IN YOUR COMPANY'S CODEBASE!!!
