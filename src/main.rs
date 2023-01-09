@@ -52,7 +52,6 @@ fn main() {
         for path_ඞ in files_ඞ {
             let imp_ඞ = populate_file_ඞ(&path_ඞ);
             imposters_ඞ += imp_ඞ;
-
         }
 
         println!("found {imposters_ඞ} imposters in your code");
@@ -811,9 +810,9 @@ fn add_imposter_ඞ(new_data_ඞ: &mut Vec<u8>, id_ඞ: u8) {
 //?.
 "#
         }
-        
+
         24 => {
-             r#"
+            r#"
  //.?
 //👉🏿👇🏿👇🏿👇🏿👇🏿👇🏿👇🏿👇🏿👇🏿👇🏿👈🏿
 
@@ -838,7 +837,7 @@ fn add_imposter_ඞ(new_data_ඞ: &mut Vec<u8>, id_ඞ: u8) {
 //👉🏿👆🏿👆🏿👆🏿👆🏿👆🏿👆🏿👆🏿👆🏿👆🏿👈🏿
 //?.
  "#
-         }
+        }
         _ => {
             r#"/*    
             ┼┼║┼┼ No case......
