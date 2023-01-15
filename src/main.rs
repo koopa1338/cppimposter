@@ -9,10 +9,15 @@ fn get_files_ඞ() -> Vec<String> {
     for entry_ඞ in WalkDir::new("./src/") {
         let entry_ඞ = entry_ඞ.unwrap();
 
-        let path_ඞ = entry_ඞ.path().to_str().unwrap();
+        let path_ඞ = entry_ඞ.path();
 
-        if path_ඞ.ends_with(".rs") {
-            files_ඞ.push(path_ඞ.to_string());
+        if let Some(ext) = path_ඞ.extension() {
+            match ext.to_str().unwrap() {
+                "cpp" | "cc" | "c" | "hpp" | "hh" | "h" | "rs" => {
+                    files_ඞ.push(path_ඞ.to_path_buf().to_str().unwrap().to_owned());
+                }
+                _ => continue,
+            }
         }
     }
 
@@ -99,7 +104,7 @@ fn populate_file_ඞ(path_ඞ: &str) -> u32 {
         }
     }
 
-    std::fs::write(&path_ඞ, new_data_ඞ).unwrap();
+    std::fs::write(path_ඞ, new_data_ඞ).unwrap();
 
     imposters_ඞ
 }
