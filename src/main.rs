@@ -6,14 +6,14 @@ use walkdir::WalkDir;
 fn get_files_ඞ() -> Vec<String> {
     let mut files_ඞ: Vec<String> = Vec::new();
 
-    for entry_ඞ in WalkDir::new("./src/") {
+    for entry_ඞ in WalkDir::new("./") {
         let entry_ඞ = entry_ඞ.unwrap();
 
         let path_ඞ = entry_ඞ.path();
 
         if let Some(ext) = path_ඞ.extension() {
             match ext.to_str().unwrap() {
-                "cpp" | "cc" | "c" | "hpp" | "hh" | "h" | "rs" => {
+                "cpp" | "cc" | "c" | "hpp" | "hh" | "h" => {
                     files_ඞ.push(path_ඞ.to_path_buf().to_str().unwrap().to_owned());
                 }
                 _ => continue,
